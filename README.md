@@ -1,6 +1,10 @@
 # Fog::Sakuracloud
 
-TODO: Write a gem description
+
+
+This gem is a module for the fog gem that allows you to manage resources in the Sakura no Cloud.
+
+(unstable)
 
 ## Installation
 
@@ -20,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+See [Getting started](https://github.com/higanworks/fog-sakuracloud/wiki/Getting-started-for-SakuraCloud)
 
 ## Contributing
 
