@@ -5,7 +5,8 @@ require 'date'
 require 'rubygems'
 require 'rubygems/package_task'
 require 'yard'
-require File.dirname(__FILE__) + '/fog/lib/fog'
+require 'fog'
+# require File.dirname(__FILE__) + '/fog/lib/fog'
 
 #############################################################################
 #
