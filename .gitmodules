@@ -1,0 +1,3 @@
+[submodule "vendor/cache/fog"]
+	path = vendor/cache/fog
+	url = https://github.com/fog/fog.git
