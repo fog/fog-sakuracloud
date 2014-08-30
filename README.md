@@ -1,6 +1,6 @@
 # Fog::Sakuracloud
 
-
+[![Build Status](https://travis-ci.org/higanworks/fog-sakuracloud.svg?branch=master)](https://travis-ci.org/higanworks/fog-sakuracloud)
 
 This gem is a module for the fog gem that allows you to manage resources in the Sakura no Cloud.
 
