@@ -11,7 +11,7 @@ Shindo.tests('Fog::Compute[:sakuracloud] | list_ssh_keys request', ['sakuracloud
   tests('success') do
 
     tests('#list_ssh_keys') do
-      sshkeys = compute_service.list_ssh_keys
+      sshkeys = sakuracloud_compute_service.list_ssh_keys
       test 'returns a Hash' do
         sshkeys.body.is_a? Hash
       end

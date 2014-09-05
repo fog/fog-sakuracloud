@@ -11,7 +11,7 @@ Shindo.tests('Fog::Compute[:sakuracloud] | list_zones request', ['sakuracloud', 
   tests('success') do
 
     tests('#list_zones') do
-      zones = compute_service.list_zones
+      zones = sakuracloud_compute_service.list_zones
       test 'returns a Hash' do
         zones.body.is_a? Hash
       end

@@ -12,7 +12,7 @@ Shindo.tests('Fog::Volume[:sakuracloud] | list_archives request', ['sakuracloud'
   tests('success') do
 
     tests('#list_archives') do
-      archives = volume_service.list_archives
+      archives = sakuracloud_volume_service.list_archives
       test 'returns a Hash' do
         archives.body.is_a? Hash
       end

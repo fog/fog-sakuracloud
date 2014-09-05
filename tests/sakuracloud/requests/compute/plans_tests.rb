@@ -13,7 +13,7 @@ Shindo.tests('Fog::Compute[:sakuracloud] | list_plans request', ['sakuracloud', 
   tests('success') do
 
     tests('#list_plans') do
-      serverplans = compute_service.list_plans
+      serverplans = sakuracloud_compute_service.list_plans
       test 'returns a Hash' do
         serverplans.body.is_a? Hash
       end

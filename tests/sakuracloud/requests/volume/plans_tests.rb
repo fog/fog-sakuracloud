@@ -11,7 +11,7 @@ Shindo.tests('Fog::Volume[:sakuracloud] | list_plans request', ['sakuracloud', '
   tests('success') do
 
     tests('#list_plans') do
-      diskplans = volume_service.list_plans
+      diskplans = sakuracloud_volume_service.list_plans
       test 'returns a Hash' do
         diskplans.body.is_a? Hash
       end

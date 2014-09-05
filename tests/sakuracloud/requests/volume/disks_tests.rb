@@ -14,7 +14,7 @@ Shindo.tests('Fog::Volume[:sakuracloud] | list_disks request', ['sakuracloud', '
   tests('success') do
 
     tests('#list_disks') do
-      disks = volume_service.list_disks
+      disks = sakuracloud_volume_service.list_disks
       test 'returns a Hash' do
         disks.body.is_a? Hash
       end
@@ -33,7 +33,7 @@ end
 Shindo.tests('Fog::Volume[:sakuracloud] | create_disks request', ['sakuracloud', 'volume']) do
   tests('success') do
     tests('#create_disks') do
-      disks = volume_service.create_disk('foobar', 4, 112500463685)
+      disks = sakuracloud_volume_service.create_disk('foobar', 4, 112500463685)
       test 'returns a Hash' do
         disks.body.is_a? Hash
       end
