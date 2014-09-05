@@ -21,11 +21,29 @@ module Fog
         end
         alias_method :destroy, :delete
 
-#        def save
-#          data = service.create_router(@attributes).body["Switch"]
-#          merge_attributes(data)
-#          true
-#        end
+        def save
+          requires :name
+          if @attributes[:networkmasklen]
+            Fog::Logger.warning("Create Router with public subnet")
+            data = service.create_router(@attributes).body["Internet"]
+            Fog::Logger.warning("Waiting available new router...")
+            new_data = router_available?(service, data["ID"])
+            merge_attributes(new_data)
+          else
+            Fog::Logger.warning("Create simple Switch")
+            data = service.create_router(@attributes).body["Switch"]
+            merge_attributes(data)
+          end
+          true
+        end
+
+        def router_available?(network, router_id)
+          until network.routers.find {|r| r.internet["ID"] == router_id}
+            print '.'
+            sleep 2
+          end
+          ::JSON.parse((network.routers.find {|r| r.internet["ID"] == router_id}).to_json)
+        end
       end
     end
   end

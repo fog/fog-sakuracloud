@@ -29,7 +29,7 @@ module Fog
             :headers => {
               'Authorization' => "Basic #{@auth_encord}"
             },
-            :expects  => [202],
+            :expects  => [201, 202],
             :method => 'POST',
             :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/#{call_resource}",
             :body => Fog::JSON.encode(body)
@@ -40,7 +40,8 @@ module Fog
       class Mock
         def create_router(options)
           response = Excon::Response.new
-          response.status = 202
+          state = options[:networkmasklen] ? 202 : 201
+          response.status = state
           response.body = {
           }
           response
