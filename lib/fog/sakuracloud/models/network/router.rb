@@ -15,11 +15,11 @@ module Fog
         attribute :bridge, :aliases => 'Bridge'
 
 
-#        def delete
-#          service.delete_router(identity)
-#          true
-#        end
-#        alias_method :destroy, :delete
+        def delete
+          service.delete_router(identity)
+          true
+        end
+        alias_method :destroy, :delete
 
 #        def save
 #          data = service.create_router(@attributes).body["Switch"]

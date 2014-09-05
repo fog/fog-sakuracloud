@@ -15,6 +15,8 @@ module Fog
 
       request_path 'fog/sakuracloud/requests/network'
       request      :list_routers
+      request      :create_router
+      request      :delete_router
 
       class Real
         def initialize(options = {})
