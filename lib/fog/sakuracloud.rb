@@ -1,6 +1,7 @@
 require 'fog/core'
 require 'fog/sakuracloud/compute'
 require 'fog/sakuracloud/volume'
+require 'fog/sakuracloud/network'
 
 module Fog
   module SakuraCloud
@@ -12,5 +13,6 @@ module Fog
 
     service(:compute, 'Compute')
     service(:volume, 'Volume')
+    service(:network, 'Network')
   end
 end
