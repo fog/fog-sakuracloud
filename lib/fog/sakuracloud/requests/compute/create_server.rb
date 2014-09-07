@@ -4,14 +4,25 @@ module Fog
   module Compute
     class SakuraCloud
       class Real
-        def create_server( name, serverplan )
+        def create_server(options)
+          if options[:switch]
+            switchs = options[:switch].split(',')
+            connectedswitches = switchs.map do |sw_id|
+              {
+                "ID" => sw_id
+              }
+            end
+          else
+            connectedswitches = [{"Scope"=>"shared", "BandWidthMbps"=>100}]
+          end
+
           body = {
             "Server" => {
-              "Name" => name,
+              "Name" => options[:name],
               "ServerPlan" => {
-                "ID" => serverplan.to_i
+                "ID" => options[:serverplan].to_i
               },
-              "ConnectedSwitches"=>[{"Scope"=>"shared", "BandWidthMbps"=>100}]
+              "ConnectedSwitches" => connectedswitches
             }
           }
 
@@ -28,7 +39,7 @@ module Fog
       end # Real
 
       class Mock
-        def create_server( name, serverplan )
+        def create_server(options)
           response = Excon::Response.new
           response.status = 201
           response.body = {

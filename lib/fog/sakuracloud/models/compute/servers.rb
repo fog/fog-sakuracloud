@@ -20,7 +20,8 @@ module Fog
         def create(options = {})
           user = options[:user] || 'root'
           Fog::Logger.warning("Create Server")
-          data = service.create_server(Fog::UUID.uuid, options[:serverplan]).body["Server"]
+          name = options[:name] ? options[:name] : Fog::UUID.uuid
+          data = service.create_server(options).body["Server"]
           server = service.servers.new
           server.merge_attributes(data)
 

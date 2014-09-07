@@ -32,7 +32,7 @@ end
 Shindo.tests('Fog::Compute[:sakuracloud] | create_servers request', ['sakuracloud', 'compute']) do
   tests('success') do
     tests('#create_servers') do
-      servers = sakuracloud_compute_service.create_server('foobar', 2001)
+      servers = sakuracloud_compute_service.create_server(:name => 'foobar', :serverplan => 2001)
       test 'returns a Hash' do
         servers.body.is_a? Hash
       end

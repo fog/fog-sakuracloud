@@ -13,7 +13,7 @@ module Fog
 
         def save
           requires :name, :server_plan
-          data = service.create_server(@attributes[:name], @attributes[:server_plan]).body["Server"]
+          data = service.create_server(@attributes).body["Server"]
           merge_attributes(data)
           true
         end
