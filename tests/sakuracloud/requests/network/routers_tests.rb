@@ -28,7 +28,7 @@ Shindo.tests('Fog::Network[:sakuracloud] | list_routers request', ['sakuracloud'
           routers.body['Internet'].first
         end
       else
-        returns(200) { routerss.status }
+        returns(200) { routers.status }
         returns(true) { routers.body.is_a? Hash }
       end
     end
