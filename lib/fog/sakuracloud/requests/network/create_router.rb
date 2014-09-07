@@ -5,33 +5,23 @@ module Fog
     class SakuraCloud
       class Real
         def create_router(options)
-          if options[:networkmasklen]
-            call_resource = 'internet'
-            bandwidthmbps = options[:bandwidthmbps] ? options[:bandwidthmbps].to_i : 100
+          bandwidthmbps = options[:bandwidthmbps] ? options[:bandwidthmbps].to_i : 100
 
-            body = {
-              "Internet" => {
-                "Name" => options[:name],
-                "NetworkMaskLen"=> options[:networkmasklen].to_i,
-                "BandWidthMbps"=> bandwidthmbps
-              }
+          body = {
+            "Internet" => {
+              "Name" => options[:name],
+              "NetworkMaskLen"=> options[:networkmasklen].to_i,
+              "BandWidthMbps"=> bandwidthmbps
             }
-          else
-            call_resource = 'switch'
-            body = {
-              "Switch" => {
-                "Name" => options[:name]
-              }
-            }
-          end
+          }
 
           request(
             :headers => {
               'Authorization' => "Basic #{@auth_encord}"
             },
-            :expects  => [201, 202],
+            :expects  => 202,
             :method => 'POST',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/#{call_resource}",
+            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/internet",
             :body => Fog::JSON.encode(body)
           )
         end
@@ -40,13 +30,12 @@ module Fog
       class Mock
         def create_router(options)
           response = Excon::Response.new
-          state = options[:networkmasklen] ? 202 : 201
-          response.status = state
+          response.status = 202
           response.body = {
           }
           response
         end
       end
     end # SakuraCloud
-  end # Volume
+  end # Network
 end # Fog

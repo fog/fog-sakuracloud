@@ -12,11 +12,16 @@ module Fog
       model_path 'fog/sakuracloud/models/network'
       model      :router
       collection :routers
+      model      :switch
+      collection :switches
 
       request_path 'fog/sakuracloud/requests/network'
       request      :list_routers
       request      :create_router
       request      :delete_router
+      request      :list_switches
+      request      :create_switch
+      request      :delete_switch
 
       class Real
         def initialize(options = {})
