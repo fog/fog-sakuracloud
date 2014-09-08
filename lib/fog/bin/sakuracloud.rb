@@ -1,3 +1,4 @@
+require 'fog/bin'
 class SakuraCloud < Fog::Bin
   class << self
     def class_for(key)

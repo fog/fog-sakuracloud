@@ -1,5 +1,12 @@
 # Changelog of fog-sakuracloud
 
+## v0.1.0
+
+- Add: Network resources
+    - switch
+    - router
+- API change: create server requires options type.
+
 ## v0.0.4
 
 - move lib/fog/bin/sakuracloud.rb from fog.
