@@ -8,4 +8,4 @@ rvm:
   - 2.0.0
   - 1.9.3
 gemfile:
-  - gemfiles/Gemfile.edge
+  - Gemfile.edge
