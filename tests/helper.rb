@@ -3,8 +3,6 @@ ENV['FOG_RC'] = ENV['FOG_RC'] || File.expand_path('../.fog', __FILE__)
 
 ## From fog-core
 require 'fog/test_helpers/formats_helper'
-require 'fog/bin'
-require File.expand_path('../../lib/fog/bin/sakuracloud', __FILE__)  ## Force override for travis(will remove next release)
 
 ## From fog submodule
 require File.expand_path('../../fog/tests/helper', __FILE__)
