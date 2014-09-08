@@ -33,11 +33,11 @@ module Fog
         end
 
         def router_available?(network, router_id)
-          until network.switches.find {|r| r.internet["ID"] == router_id}
+          until network.switches.find {|r| r.internet != nil && r.internet["ID"] == router_id}
             print '.'
             sleep 2
           end
-          ::JSON.parse((network.switches.find {|r| r.internet["ID"] == router_id}).to_json)
+          ::JSON.parse((network.switches.find {|r| r.internet != nil && r.internet["ID"] == router_id}).to_json)
         end
       end
     end
