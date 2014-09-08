@@ -6,7 +6,6 @@ require 'rubygems'
 require 'rubygems/package_task'
 require 'yard'
 require 'fog'
-require File.expand_path('../lib/fog/bin/sakuracloud', __FILE__)  ## Force override
 
 #############################################################################
 #
