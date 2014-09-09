@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/fog/fog-sakuracloud.svg?branch=master)](https://travis-ci.org/fog/fog-sakuracloud)
 [![Stories in Ready](https://badge.waffle.io/fog/fog-sakuracloud.svg?label=ready&title=Ready)](http://waffle.io/fog/fog-sakuracloud) 
+[![Stories in Progress](https://badge.waffle.io/fog/fog-sakuracloud.svg?label=In%20Progress&title=In%20Progress')](http://waffle.io/fog/fog-sakuracloud) 
 
 This gem is a module for the fog gem that allows you to manage resources in the Sakura no Cloud.
 
