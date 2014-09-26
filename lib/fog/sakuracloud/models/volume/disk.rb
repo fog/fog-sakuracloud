@@ -31,6 +31,17 @@ module Fog
           service.configure_disk(@attributes[:id], sshkey_id )
           true
         end
+
+        def associate_ip(ipaddress, networkmasklen, defaultroute)
+          subnet ={
+            :ipaddress => ipaddress,
+            :networkmasklen => networkmasklen,
+            :defaultroute => defaultroute
+          }
+          requires :id
+          service.associate_ip_to_disk(@attributes[:id], subnet )
+          true
+        end
       end
     end
   end

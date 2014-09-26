@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v0.1.1
+
+- Add: Associate IP address to disk
+
 ## v0.1.0
 
 - Add: Network resources

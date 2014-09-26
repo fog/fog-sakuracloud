@@ -22,6 +22,7 @@ module Fog
       request      :list_plans
       request      :create_disk
       request      :configure_disk
+      request      :associate_ip_to_disk
       request      :attach_disk
       request      :delete_disk
       request      :list_archives
