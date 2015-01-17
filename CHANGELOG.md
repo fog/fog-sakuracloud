@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v0.1.2
+
+- Clean up: #7 HT: @starbelly
+
 ## v0.1.1
 
 - Add: Associate IP address to disk
