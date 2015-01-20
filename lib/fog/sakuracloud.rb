@@ -1,4 +1,5 @@
 require 'fog/core'
+require 'fog/json'
 require 'fog/sakuracloud/compute'
 require 'fog/sakuracloud/volume'
 require 'fog/sakuracloud/network'
