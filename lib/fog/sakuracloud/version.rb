@@ -1,5 +1,5 @@
 module Fog
   module Sakuracloud
-    VERSION = "0.1.2"
+    VERSION = "1.0.0.dev"
   end
 end

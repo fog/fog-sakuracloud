@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.5"
   ## List your development dependencies here. Development dependencies are
   ## those that are only needed during development
-  spec.add_development_dependency('fog')
   spec.add_development_dependency('minitest')
   spec.add_development_dependency('rake')
   spec.add_development_dependency('rbvmomi')
