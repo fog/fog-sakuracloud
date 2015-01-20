@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.0.0
+
+- Issue:6 Depends only fog-core.
+
 ## v0.1.2
 
 - Clean up: #7 HT: @starbelly

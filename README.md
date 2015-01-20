@@ -7,8 +7,6 @@
 
 This gem is a module for the fog gem that allows you to manage resources in the Sakura no Cloud.
 
-(unstable)
-
 ## Installation
 
 Add this line to your application's Gemfile:
