@@ -33,8 +33,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('shindo', '~> 0.3.4')
   spec.add_development_dependency('fission')
   spec.add_development_dependency('pry')
-  spec.add_development_dependency('opennebula', '>=4.4.0')
-  spec.add_development_dependency('google-api-client', '~> 0.6', '>= 0.6.2')
   spec.add_development_dependency('rubocop') if RUBY_VERSION > "1.9"
 
 end
