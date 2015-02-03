@@ -29,7 +29,7 @@ See [Getting started](https://github.com/higanworks/fog-sakuracloud/wiki/Getting
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/fog-sakuracloud/fork )
+1. Fork it ( https://github.com/fog/fog-sakuracloud/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
