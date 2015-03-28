@@ -1,6 +1,3 @@
-require 'fog/sakuracloud'
-require 'fog/compute'
-
 module Fog
   module Compute
     class SakuraCloud < Fog::Service

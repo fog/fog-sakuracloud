@@ -1,6 +1,3 @@
-require 'fog/sakuracloud'
-require 'fog/volume'
-
 module Fog
   module Volume
     class SakuraCloud < Fog::Service
