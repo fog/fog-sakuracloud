@@ -1,10 +1,19 @@
 require 'fog/core'
 require 'fog/json'
-require 'fog/sakuracloud/compute'
-require 'fog/sakuracloud/volume'
-require 'fog/sakuracloud/network'
 
 module Fog
+  module Compute
+    autoload :SakuraCloud, File.expand_path('../sakuracloud/compute', __FILE__)
+  end
+
+  module Network
+    autoload :SakuraCloud, File.expand_path('../sakuracloud/network', __FILE__)
+  end
+
+  module Volume
+    autoload :SakuraCloud, File.expand_path('../sakuracloud/volume', __FILE__)
+  end
+
   module SakuraCloud
     extend Fog::Provider
 

@@ -1,6 +1,3 @@
-require 'fog/sakuracloud'
-require 'fog/network'
-
 module Fog
   module Network
     class SakuraCloud < Fog::Service
