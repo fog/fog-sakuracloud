@@ -1,8 +1,12 @@
 # Changelog of fog-sakuracloud
 
-## v1.0.0
+## v1.1.0
 
-- Issue:6 Depends only fog-core.
+- Feature: Support Install Script.
+
+## v1.0.1
+
+- #11 Using Relative paths.
 
 ## v0.1.2
 

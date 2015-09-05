@@ -48,6 +48,7 @@ module Fog
             disk_attached?(server, disk.id)
             Fog::Logger.warning("Modifing disk")
             volume.configure_disk(disk.id, options[:sshkey])
+            volume.register_note_to_disk(disk.id, options[:startup_script]) if options[:startup_script]
             disk
         end
 

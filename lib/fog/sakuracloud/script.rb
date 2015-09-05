@@ -1,29 +1,20 @@
 module Fog
-  module Volume
-    class SakuraCloud < Fog::Service
+  module SakuraCloud
+    class Script < Fog::Service
       requires     :sakuracloud_api_token
       requires     :sakuracloud_api_token_secret
 
       recognizes   :sakuracloud_api_url
 
-      model_path 'fog/sakuracloud/models/volume'
-      model      :archive
-      collection :archives
-      model      :plan
-      collection :plans
-      model      :disk
-      collection :disks
+      model_path 'fog/sakuracloud/models/script'
+      model      :note
+      collection :notes
 
-      request_path 'fog/sakuracloud/requests/volume'
-      request      :list_disks
-      request      :list_plans
-      request      :create_disk
-      request      :configure_disk
-      request      :associate_ip_to_disk
-      request      :register_note_to_disk
-      request      :attach_disk
-      request      :delete_disk
-      request      :list_archives
+      request_path 'fog/sakuracloud/requests/script'
+      request      :list_notes
+      request      :create_note
+      request      :modify_note
+      request      :delete_note
 
       class Real
         def initialize(options = {})
@@ -56,9 +47,7 @@ module Fog
         def self.data
           @data ||= Hash.new do |hash, key|
             hash[key] = {
-              :disks => [],
-              :plans => [],
-              :archives => []
+              :notes => []
             }
           end
         end
@@ -82,6 +71,6 @@ module Fog
           self.class.data.delete(@sakuracloud_api_token_secret)
         end
       end
-    end #SakuraCloud
-  end #Volume
+    end
+  end
 end

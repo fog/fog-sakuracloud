@@ -42,6 +42,14 @@ module Fog
           service.associate_ip_to_disk(@attributes[:id], subnet )
           true
         end
+
+        def register_script(notes)
+          note_ids = []
+          note_ids << notes
+          requires :id
+          service.register_note_to_disk(@attributes[:id], note_ids.flatten )
+          true
+        end
       end
     end
   end
