@@ -13,6 +13,7 @@ module Fog
       request_path 'fog/sakuracloud/requests/script'
       request      :list_notes
       request      :create_note
+      request      :modify_note
       request      :delete_note
 
       class Real

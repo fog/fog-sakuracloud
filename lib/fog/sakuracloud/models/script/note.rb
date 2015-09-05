@@ -23,9 +23,14 @@ module Fog
 
         def save
           requires :name, :content
-          Fog::Logger.warning("Create Note")
-          data = service.create_note(@attributes).body["Note"]
-          merge_attributes(new_data)
+          if identity
+            Fog::Logger.warning("Update Note #{identity}")
+            data = service.modify_note(@attributes).body["Note"]
+          else
+            Fog::Logger.warning("Create New Note")
+            data = service.create_note(@attributes).body["Note"]
+          end
+          merge_attributes(data)
           true
         end
       end

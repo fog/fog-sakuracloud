@@ -20,6 +20,7 @@ module Fog
       request      :create_disk
       request      :configure_disk
       request      :associate_ip_to_disk
+      request      :register_note_to_disk
       request      :attach_disk
       request      :delete_disk
       request      :list_archives

@@ -4,9 +4,9 @@ module Fog
   module Volume
     class SakuraCloud
       class Real
-        def configure_disk( disk_id, sshkey_id )
+        def register_note_to_disk( disk_id, notes )
           body = {
-            "SSHKey" => {"ID" => sshkey_id.to_s }
+            "Notes" => notes.map {|note| { "ID" => note }}
           }
 
           request(
@@ -22,13 +22,14 @@ module Fog
       end # Real
 
       class Mock
-        def configure_disk( disk_id, sshkey_id )
+        def register_note_to_disk( disk_id, notes )
           response = Excon::Response.new
           response.status = 200
-          response.body = {"Success"=>true, "is_ok"=>true}
+          response.body = {
+          }
           response
         end
       end
-    end # SakuraCloud
-  end # Volume
-end # Fog
+    end
+  end
+end
