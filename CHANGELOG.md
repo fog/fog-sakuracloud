@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.1.1
+
+- Bugfix: Delete Server
+
 ## v1.1.0
 
 - Feature: Support Install Script.

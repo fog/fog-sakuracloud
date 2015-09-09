@@ -28,9 +28,9 @@ module Fog
           service.stop_server(@attributes[:id], force)
         end
 
-        def delete(disks = [])
+        def delete(force = false, disks = [])
           requires :id
-          service.delete_server(@attributes[:id], disks)
+          service.delete_server(@attributes[:id], force, disks)
           true
         end
         alias_method :destroy, :delete
