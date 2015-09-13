@@ -14,6 +14,10 @@ module Fog
     autoload :SakuraCloud, File.expand_path('../sakuracloud/volume', __FILE__)
   end
 
+  module DNS
+    autoload :SakuraCloud, File.expand_path('../sakuracloud/dns', __FILE__)
+  end
+
   module SakuraCloud
     extend Fog::Provider
 
