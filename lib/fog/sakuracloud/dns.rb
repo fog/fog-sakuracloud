@@ -14,6 +14,7 @@ module Fog
       request      :list_zones
       request      :create_zone
       request      :delete_zone
+      request      :modify_zone
 
       class Real
         def initialize(options = {})

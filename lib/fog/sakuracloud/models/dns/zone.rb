@@ -20,8 +20,13 @@ module Fog
 
         def save
           requires :zone
-          Fog::Logger.warning("Create DNS Zone")
-          data = service.create_zone(@attributes).body["CommonServiceItem"]
+          if identity
+            Fog::Logger.warning("Update DNS Zone #{identity}")
+            data = service.modify_zone(@attributes).body["CommonServiceItem"]
+          else
+            Fog::Logger.warning("Create DNS Zone")
+            data = service.create_zone(@attributes).body["CommonServiceItem"]
+          end
           merge_attributes(data)
           true
         end
