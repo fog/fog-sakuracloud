@@ -17,6 +17,12 @@ module Fog
           nil
         end
 
+        def regist_interface_to_server(id)
+          sv = get(id)
+          sv.regist_interface
+          sv
+        end
+
         def create(options = {})
           user = options[:user] || 'root'
           Fog::Logger.warning("Create Server")

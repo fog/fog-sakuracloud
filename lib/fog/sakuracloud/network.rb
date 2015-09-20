@@ -11,6 +11,8 @@ module Fog
       collection :routers
       model      :switch
       collection :switches
+      model      :interface
+      collection :interfaces
 
       request_path 'fog/sakuracloud/requests/network'
       request      :list_routers
@@ -19,6 +21,10 @@ module Fog
       request      :list_switches
       request      :create_switch
       request      :delete_switch
+      request      :list_interfaces
+      request      :regist_interface_to_server
+      request      :connect_interface_to_switch
+      request      :delete_interface
 
       class Real
         def initialize(options = {})
