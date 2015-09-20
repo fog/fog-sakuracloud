@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.2.0
+
+- Feature: Manage Interface.
+
 ## v1.1.1
 
 - Bugfix: Delete Server
