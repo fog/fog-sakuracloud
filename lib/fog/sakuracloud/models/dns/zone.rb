@@ -7,6 +7,7 @@ module Fog
         identity :id, :aliases => 'ID'
         attribute :name, :aliases => 'Name'
         attribute :description, :aliases => 'Description'
+        attribute :rr_sets, :nested_aliases => 'Settings.DNS.ResourceRecordSets', :default => []
         attribute :zone, :nested_aliases => 'Status.Zone'
         attribute :nameservers, :nested_aliases => 'Status.NS'
         attribute :tags, :aliases => 'Tags'

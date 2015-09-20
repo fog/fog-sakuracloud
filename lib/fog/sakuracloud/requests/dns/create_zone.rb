@@ -11,7 +11,12 @@ module Fog
               "Name"=>name,
               "Status"=>{"Zone"=>options[:zone]},
               "Provider"=>{"Class"=>"dns"},
-              "Description"=> options[:description]
+              "Description"=> options[:description],
+              "Settings" => {
+                "DNS" => {
+                  "ResourceRecordSets" => options[:rr_sets]
+                }
+              }
             }
           }
 
