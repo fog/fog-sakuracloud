@@ -8,6 +8,8 @@ module Fog
         attribute :name, :aliases => 'Name'
         attribute :description, :aliases => 'Description'
         attribute :status, :aliases => 'Status'
+        attribute :zone
+        attribute :nameservers
 
         def delete
           service.delete_zone(identity)
