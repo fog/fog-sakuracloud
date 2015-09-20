@@ -33,5 +33,6 @@ module Fog
     service(:volume,  'Volume')
     service(:network, 'Network')
     service(:script,  'Script')
+    service(:dns,     'DNS')
   end
 end
