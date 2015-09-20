@@ -7,9 +7,9 @@ module Fog
         identity :id, :aliases => 'ID'
         attribute :name, :aliases => 'Name'
         attribute :description, :aliases => 'Description'
-        attribute :status, :aliases => 'Status'
-        attribute :zone
-        attribute :nameservers
+        attribute :zone, :nested_aliases => 'Status.Zone'
+        attribute :nameservers, :nested_aliases => 'Status.NS'
+        attribute :tags, :aliases => 'Tags'
 
         def delete
           service.delete_zone(identity)
@@ -18,7 +18,7 @@ module Fog
         alias_method :destroy, :delete
 
         def save
-          requires :name
+          requires :zone
           Fog::Logger.warning("Create DNS Zone")
           data = service.create_zone(@attributes).body["CommonServiceItem"]
           merge_attributes(data)
