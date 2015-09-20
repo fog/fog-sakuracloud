@@ -13,6 +13,7 @@ module Fog
       request_path 'fog/sakuracloud/requests/dns'
       request      :list_zones
       request      :create_zone
+      request      :delete_zone
 
       class Real
         def initialize(options = {})
