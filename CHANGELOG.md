@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.3.0
+
+- Feature: Manage Cloud DNS
+
 ## v1.2.0
 
 - Feature: Manage Interface.
