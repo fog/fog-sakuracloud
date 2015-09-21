@@ -25,7 +25,6 @@ module Fog
       request      :list_plans
       request      :list_ssh_keys
       request      :list_zones
-      request      :regist_interface_to_server
 
       class Real
         def initialize(options = {})
