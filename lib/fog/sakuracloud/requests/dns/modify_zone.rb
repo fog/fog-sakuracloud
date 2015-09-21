@@ -7,11 +7,7 @@ module Fog
         def modify_zone(options)
           body = {
             "CommonServiceItem"=>{
-              "Settings" => {
-                "DNS" => {
-                  "ResourceRecordSets" => options[:rr_sets]
-                }
-              }
+              "Settings" => options[:settings]
             }
           }
 

@@ -7,10 +7,23 @@ module Fog
         identity :id, :aliases => 'ID'
         attribute :name, :aliases => 'Name'
         attribute :description, :aliases => 'Description'
-        attribute :rr_sets, :nested_aliases => 'Settings.DNS.ResourceRecordSets', :default => []
-        attribute :zone, :nested_aliases => 'Status.Zone'
-        attribute :nameservers, :nested_aliases => 'Status.NS'
+        attribute :status, :aliases => 'Status'
+        attribute :settings, :aliases => 'Settings'
         attribute :tags, :aliases => 'Tags'
+
+        ## Reader methods for nested values.
+        # Returns value or nil
+        def rr_sets
+          settings.fetch('DNS', {}).fetch('ResourceRecordSets', []) if settings
+        end
+
+        def zone
+          status.fetch('Zone') if status
+        end
+
+        def nameservers
+          status.fetch('NS') if status
+        end
 
         def delete
           service.delete_zone(identity)
