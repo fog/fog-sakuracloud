@@ -22,7 +22,7 @@ module Fog
             :expects  => 202,
             :method => 'POST',
             :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/internet",
-            :query => URL.encode(Fog::JSON.encode(body))
+            :body => Fog::JSON.encode(body)
           )
         end
       end # Real
