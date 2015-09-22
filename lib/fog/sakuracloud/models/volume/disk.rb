@@ -32,6 +32,12 @@ module Fog
           true
         end
 
+        def carve_hostname_on_disk(hostname)
+          requires :id
+          service.carve_hostname_on_disk(@attributes[:id], hostname )
+          true
+        end
+
         def associate_ip(ipaddress, networkmasklen, defaultroute)
           subnet ={
             :ipaddress => ipaddress,

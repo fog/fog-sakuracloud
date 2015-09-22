@@ -24,6 +24,7 @@ module Fog
       request      :attach_disk
       request      :delete_disk
       request      :list_archives
+      request      :carve_hostname_on_disk
 
       class Real
         def initialize(options = {})

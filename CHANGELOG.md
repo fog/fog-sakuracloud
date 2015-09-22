@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.3.2
+
+- Feature: Set hostname (Disk#carve_hostname_on_disk)
+
 ## v1.3.1
 
 - Feature: Add simple setter to ResourceRecordSets
