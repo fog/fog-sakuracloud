@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.3.1
+
+- Feature: Add simple setter to ResourceRecordSets
+
 ## v1.3.0
 
 - Feature: Manage Cloud DNS

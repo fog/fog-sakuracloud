@@ -17,6 +17,15 @@ module Fog
           settings.fetch('DNS', {}).fetch('ResourceRecordSets', []) if settings
         end
 
+        def rr_sets=(rrsets)
+          raise "ResourceRecordSets must be Array of Hash!" unless rrsets.is_a?(Array)
+          self.settings = {
+            'DNS' => {
+              'ResourceRecordSets' => rrsets
+            }
+          }
+        end
+
         def zone
           status.fetch('Zone') if status
         end
