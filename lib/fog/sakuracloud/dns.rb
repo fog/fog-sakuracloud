@@ -18,7 +18,7 @@ module Fog
 
       class Real
         def initialize(options = {})
-          @auth_encord = Base64.strict_encode64([
+          @auth_encode = Base64.strict_encode64([
             options[:sakuracloud_api_token],
             options[:sakuracloud_api_token_secret]
           ].join(':'))

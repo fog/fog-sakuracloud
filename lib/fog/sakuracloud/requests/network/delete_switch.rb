@@ -7,7 +7,7 @@ module Fog
         def delete_switch( id )
           request(
             :headers => {
-              'Authorization' => "Basic #{@auth_encord}"
+              'Authorization' => "Basic #{@auth_encode}"
             },
             :expects  => [200],
             :method => 'DELETE',

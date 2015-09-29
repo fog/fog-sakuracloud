@@ -17,7 +17,7 @@ module Fog
 
           request(
             :headers => {
-              'Authorization' => "Basic #{@auth_encord}"
+              'Authorization' => "Basic #{@auth_encode}"
             },
             :expects  => 202,
             :method => 'POST',

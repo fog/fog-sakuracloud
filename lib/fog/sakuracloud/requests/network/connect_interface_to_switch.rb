@@ -7,7 +7,7 @@ module Fog
         def connect_interface_to_switch( id, switch_id )
           response = request(
             :headers => {
-              'Authorization' => "Basic #{@auth_encord}"
+              'Authorization' => "Basic #{@auth_encode}"
             },
             :expects  => [200],
             :method => 'PUT',
