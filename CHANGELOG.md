@@ -1,5 +1,10 @@
 # Changelog of fog-sakuracloud
 
+## v1.3.3
+
+- Typo: Fix typo ( auth_encord -> auth_encode ) #16 HT: @mazgi
+- Drop support ruby 1.9, add 2.2
+
 ## v1.3.2
 
 - Feature: Set hostname (Disk#carve_hostname_on_disk)
