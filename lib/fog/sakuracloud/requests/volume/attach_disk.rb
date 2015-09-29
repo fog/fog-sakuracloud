@@ -7,7 +7,7 @@ module Fog
         def attach_disk( disk_id, server_id )
           request(
             :headers => {
-              'Authorization' => "Basic #{@auth_encord}"
+              'Authorization' => "Basic #{@auth_encode}"
             },
             :expects  => [200],
             :method => 'PUT',

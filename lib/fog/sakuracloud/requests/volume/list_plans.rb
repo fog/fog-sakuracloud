@@ -7,7 +7,7 @@ module Fog
         def list_plans(options = {})
           request(
             :headers => {
-              'Authorization' => "Basic #{@auth_encord}"
+              'Authorization' => "Basic #{@auth_encode}"
             },
             :method => 'GET',
             :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/product/disk"

@@ -15,7 +15,7 @@ module Fog
 
           response = request(
             :headers => {
-              'Authorization' => "Basic #{@auth_encord}"
+              'Authorization' => "Basic #{@auth_encode}"
             },
             :expects  => [201],
             :method => 'POST',
