@@ -39,7 +39,7 @@ module Fog
         end
 
         def attach(server_id)
-          service.attach_disk(@attributes[:id], server_id )
+          service.attach_disk(id, server_id)
           true
         end
 
