@@ -28,7 +28,7 @@ module Fog
       end # Real
 
       class Mock
-        def create_disk( name, plan, sourcearchive, options = {} )
+        def create_disk( name, plan, options = {} )
           response = Excon::Response.new
           response.status = 202
           response.body = {
