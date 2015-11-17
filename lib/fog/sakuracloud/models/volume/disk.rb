@@ -22,10 +22,10 @@ module Fog
         def save
           requires :name, :plan
           options = {
-            :source_archive=>@attributes[:source_archive],
-            :size_mb=>@attributes[:size_mb]
+            :source_archive => source_archive,
+            :size_mb => size_mb
           } 
-          data = service.create_disk(@attributes[:name], @attributes[:plan], options).body["Disk"]
+          data = service.create_disk(name, plan, options).body["Disk"]
           merge_attributes(data)
           true
         end
