@@ -4,24 +4,22 @@ module Fog
   module Volume
     class SakuraCloud
       class Real
-        def create_disk( name, plan, sourcearchive )
-          body = {
-           "Disk" => {
-             "Name" => name,
-             "SourceArchive" => {
-               "ID" => sourcearchive.to_s
-              },
-              "Plan" => {
-                "ID" => plan.to_i
-              }
-            }
-          }
+        def create_disk( name, plan, options = {} )
+          body = { "Disk" => { "Name" => name, "Plan" => { "ID" => plan.to_i } } }
+
+          if !options[:source_archive].nil?
+            body["Disk"]["SourceArchive"] = { "ID"=>options[:source_archive].to_s }
+          end
+
+          if !options[:size_mb].nil?
+            body["Disk"]["SizeMB"] = options[:size_mb].to_i
+          end
 
           request(
             :headers => {
               'Authorization' => "Basic #{@auth_encode}"
             },
-            :expects  => [202],
+            :expects  => [201, 202],
             :method => 'POST',
             :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/disk",
             :body => Fog::JSON.encode(body)
@@ -30,7 +28,7 @@ module Fog
       end # Real
 
       class Mock
-        def create_disk( name, plan, sourcearchive )
+        def create_disk( name, plan, sourcearchive, options = {} )
           response = Excon::Response.new
           response.status = 202
           response.body = {

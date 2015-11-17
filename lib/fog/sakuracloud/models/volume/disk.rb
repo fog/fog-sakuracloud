@@ -20,8 +20,12 @@ module Fog
         alias_method :destroy, :delete
 
         def save
-          requires :name, :plan, :source_archive
-          data = service.create_disk(@attributes[:name], @attributes[:plan], @attributes[:source_archive]).body["Disk"]
+          requires :name, :plan
+          options = {
+            :source_archive=>@attributes[:source_archive],
+            :size_mb=>@attributes[:size_mb]
+          } 
+          data = service.create_disk(@attributes[:name], @attributes[:plan], options).body["Disk"]
           merge_attributes(data)
           true
         end
