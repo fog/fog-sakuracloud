@@ -38,6 +38,11 @@ module Fog
           true
         end
 
+        def attach(server_id)
+          service.attach_disk(@attributes[:id], server_id )
+          true
+        end
+
         def associate_ip(ipaddress, networkmasklen, defaultroute)
           subnet ={
             :ipaddress => ipaddress,
