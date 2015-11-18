@@ -1,5 +1,10 @@
 # Changelog of fog-sakuracloud
 
+## v1.4.0
+
+- Feature: #17 Support Standard Disk Plan for Disk creation HT: @noralife
+- Feature: #18 Add attach feature to Disk Model HT: @noralife
+
 ## v1.3.3
 
 - Typo: Fix typo ( auth_encord -> auth_encode ) #16 HT: @mazgi
