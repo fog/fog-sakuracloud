@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.5.0
+
+- Feature: # Add new option api_zone to Provider to select zone easily.
+
 ## v1.4.0
 
 - Feature: #17 Support Standard Disk Plan for Disk creation HT: @noralife
