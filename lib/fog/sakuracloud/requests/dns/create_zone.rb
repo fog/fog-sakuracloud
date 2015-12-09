@@ -26,7 +26,7 @@ module Fog
             },
             :expects  => 201,
             :method => 'POST',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/commonserviceitem",
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/commonserviceitem",
             :body => Fog::JSON.encode(body)
           )
         end

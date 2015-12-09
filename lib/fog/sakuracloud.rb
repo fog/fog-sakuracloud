@@ -22,8 +22,6 @@ module Fog
     extend Fog::Provider
 
     SAKURACLOUD_API_VERSION = '1.1' unless defined? SAKURACLOUD_API_VERSION
-    SAKURACLOUD_API_ZONE = "is1b" unless defined? SAKURACLOUD_API_ZONE
-    SAKURACLOUD_API_ENDPOINT = "/cloud/zone/#{SAKURACLOUD_API_ZONE}/api/cloud/#{SAKURACLOUD_API_VERSION}/"
 
     # Miscs
     ## Startup Script
@@ -34,5 +32,20 @@ module Fog
     service(:network, 'Network')
     service(:script,  'Script')
     service(:dns,     'DNS')
+
+
+    def self.api_zones
+      @api_zones ||= ['tk1a','is1b', 'is1b', 'tk1v']
+    end
+
+    def self.validate_api_zone!(api_zone, host=nil)
+      if !api_zones.include?(api_zone)
+        raise ArgumentError, "Unknown api_zone: #{api_zone.inspect}"
+      end
+    end
+
+    def self.build_endpoint(api_zone)
+      "/cloud/zone/#{api_zone}/api/cloud/#{SAKURACLOUD_API_VERSION}/"
+    end
   end
 end

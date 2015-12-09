@@ -11,7 +11,7 @@ module Fog
             },
             :expects  => [200],
             :method => 'DELETE',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/switch/#{id}"
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/switch/#{id}"
           )
         end
       end # Real

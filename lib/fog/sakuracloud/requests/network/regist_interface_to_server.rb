@@ -19,7 +19,7 @@ module Fog
             },
             :expects  => [201],
             :method => 'POST',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/interface",
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/interface",
             :body => Fog::JSON.encode(body)
           )
           response.body['Interface']['ID']

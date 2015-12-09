@@ -11,7 +11,7 @@ module Fog
             },
             :expects  => [200],
             :method => 'PUT',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/server/#{id}/power"
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/server/#{id}/power"
           )
           true
         end

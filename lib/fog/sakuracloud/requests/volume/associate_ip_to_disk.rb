@@ -19,7 +19,7 @@ module Fog
             },
             :expects  => [200],
             :method => 'PUT',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/disk/#{disk_id.to_s}/config",
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/disk/#{disk_id.to_s}/config",
             :body => Fog::JSON.encode(body)
           )
         end
