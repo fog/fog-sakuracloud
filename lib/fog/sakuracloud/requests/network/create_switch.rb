@@ -17,7 +17,7 @@ module Fog
             },
             :expects  => 201,
             :method => 'POST',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/switch",
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/switch",
             :body => Fog::JSON.encode(body)
           )
         end

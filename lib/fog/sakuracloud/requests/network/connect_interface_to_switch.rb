@@ -11,7 +11,7 @@ module Fog
             },
             :expects  => [200],
             :method => 'PUT',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/interface/#{id}/to/switch/#{switch_id}"
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/interface/#{id}/to/switch/#{switch_id}"
           )
           response.body['Interface']['ID']
         end

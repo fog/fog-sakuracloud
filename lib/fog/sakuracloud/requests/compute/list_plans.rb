@@ -10,7 +10,7 @@ module Fog
               'Authorization' => "Basic #{@auth_encode}"
             },
             :method => 'GET',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/product/server"
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/product/server"
           )
         end
       end

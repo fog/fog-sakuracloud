@@ -19,7 +19,7 @@ module Fog
               'Authorization' => "Basic #{@auth_encode}"
             },
             :method => 'GET',
-            :path => "#{Fog::SakuraCloud::SAKURACLOUD_API_ENDPOINT}/interface",
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/interface",
             :query => URI.encode(Fog::JSON.encode(filter))
           )
         end
