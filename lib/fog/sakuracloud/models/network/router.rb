@@ -32,6 +32,10 @@ module Fog
           true
         end
 
+        def collect_monitor
+          service.collect_monitor_router(identity).body["Data"]
+        end
+
         def router_available?(network, router_id)
           until network.switches.find {|r| r.internet != nil && r.internet["ID"] == router_id}
             print '.'
