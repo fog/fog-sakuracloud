@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.5.2
+
+- Feature: Add filter params Start and End to collect_monitor_router.
+
 ## v1.5.1
 
 - Feature: Add monitor to Router model PR #20 HT: @miyukki
