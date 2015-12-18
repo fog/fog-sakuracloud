@@ -4,14 +4,18 @@ module Fog
   module Network
     class SakuraCloud
       class Real
-        def collect_monitor_router( id )
+        def collect_monitor_router( id ,start_time = nil, end_time = nil)
+          filter = {}
+          filter['Start'] = start_time if start_time
+          filter['End']   = end_time if end_time
           request(
             :headers => {
               'Authorization' => "Basic #{@auth_encode}"
             },
             :expects  => [200],
             :method => 'GET',
-            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/internet/#{id}/monitor"
+            :path => "#{Fog::SakuraCloud.build_endpoint(@api_zone)}/internet/#{id}/monitor",
+            :query => URI.encode(Fog::JSON.encode(filter))
           )
         end
       end # Real

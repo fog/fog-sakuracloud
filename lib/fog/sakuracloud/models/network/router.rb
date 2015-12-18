@@ -32,8 +32,8 @@ module Fog
           true
         end
 
-        def collect_monitor
-          service.collect_monitor_router(identity).body["Data"]
+        def collect_monitor(start_time = nil, end_time = nil)
+          service.collect_monitor_router(identity, start_time, end_time).body["Data"]
         end
 
         def router_available?(network, router_id)
