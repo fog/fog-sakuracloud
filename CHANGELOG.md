@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.5.1
+
+- Feature: Add monitor to Router model PR #20 HT: @miyukki
+
 ## v1.5.0
 
 - Feature: # Add new option api_zone to Provider to select zone easily.
