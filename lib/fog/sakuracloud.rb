@@ -1,5 +1,6 @@
 require 'fog/core'
 require 'fog/json'
+require 'fog/sakuracloud/utils/request'
 
 module Fog
   module Compute

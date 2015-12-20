@@ -17,6 +17,8 @@ module Fog
       request      :modify_zone
 
       class Real
+        include Fog::SakuraCloud::Utils::Request
+
         def initialize(options = {})
           @auth_encode = Base64.strict_encode64([
             options[:sakuracloud_api_token],
@@ -30,18 +32,6 @@ module Fog
           Fog::SakuraCloud.validate_api_zone!(@api_zone)
 
           @connection = Fog::Core::Connection.new(@sakuracloud_api_url)
-        end
-
-        def request(params)
-          response = parse @connection.request(params)
-          response
-        end
-
-        private
-        def parse(response)
-          return response if response.body.empty?
-          response.body = Fog::JSON.decode(response.body)
-          response
         end
       end
 
