@@ -1,5 +1,10 @@
 # Changelog of fog-sakuracloud
 
+## v1.6.0
+
+- Miscs: Wrap request for error messages to be readable. #22
+- Cleanup: replace @attribute[:id] to id #21
+
 ## v1.5.2
 
 - Feature: Add filter params Start and End to collect_monitor_router.
