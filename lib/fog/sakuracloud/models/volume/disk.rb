@@ -32,13 +32,13 @@ module Fog
 
         def configure(sshkey_id)
           requires :id
-          service.configure_disk(@attributes[:id], sshkey_id )
+          service.configure_disk(id, sshkey_id )
           true
         end
 
         def carve_hostname_on_disk(hostname)
           requires :id
-          service.carve_hostname_on_disk(@attributes[:id], hostname )
+          service.carve_hostname_on_disk(id, hostname )
           true
         end
 
@@ -54,7 +54,7 @@ module Fog
             :defaultroute => defaultroute
           }
           requires :id
-          service.associate_ip_to_disk(@attributes[:id], subnet )
+          service.associate_ip_to_disk(id, subnet )
           true
         end
 
@@ -62,7 +62,7 @@ module Fog
           note_ids = []
           note_ids << notes
           requires :id
-          service.register_note_to_disk(@attributes[:id], note_ids.flatten )
+          service.register_note_to_disk(id, note_ids.flatten )
           true
         end
       end

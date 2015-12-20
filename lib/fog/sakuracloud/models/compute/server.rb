@@ -20,17 +20,17 @@ module Fog
 
         def boot
           requires :id
-          service.boot_server(@attributes[:id])
+          service.boot_server(id)
         end
 
         def stop(force = false)
           requires :id
-          service.stop_server(@attributes[:id], force)
+          service.stop_server(id, force)
         end
 
         def delete(force = false, disks = [])
           requires :id
-          service.delete_server(@attributes[:id], force, disks)
+          service.delete_server(id, force, disks)
           true
         end
         alias_method :destroy, :delete
