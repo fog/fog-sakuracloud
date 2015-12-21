@@ -19,6 +19,7 @@ module Fog
       request      :create_router
       request      :delete_router
       request      :collect_monitor_router
+      request      :change_router_bandwidth
       request      :list_switches
       request      :create_switch
       request      :delete_switch

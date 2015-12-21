@@ -36,6 +36,10 @@ module Fog
           service.collect_monitor_router(identity, start_time, end_time).body["Data"]
         end
 
+        def change_bandwidth(bandwidth)
+          service.change_router_bandwidth(identity, bandwidth).body["Success"]
+        end
+
         def router_available?(network, router_id)
           until network.switches.find {|r| r.internet != nil && r.internet["ID"] == router_id}
             print '.'
