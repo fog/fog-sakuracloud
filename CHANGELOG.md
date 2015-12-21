@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.7.0
+
+- Change: Rebuild router model from internet resource.
+
 ## v1.6.0
 
 - Miscs: Wrap request for error messages to be readable. #22
