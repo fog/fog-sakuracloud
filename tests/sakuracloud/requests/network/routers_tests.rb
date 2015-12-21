@@ -13,9 +13,6 @@ Shindo.tests('Fog::Network[:sakuracloud] | list_routers request', ['sakuracloud'
   @routers_list_format = {
     'Index'          => Integer,
     'ID'             => String,
-    'Name'           => String,
-    'BandWidthMbps'  => Integer,
-    'NetworkMaskLen' => Integer,
     'Switch'         => Hash
   }
 
