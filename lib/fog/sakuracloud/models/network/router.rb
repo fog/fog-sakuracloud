@@ -24,7 +24,6 @@ module Fog
           attached_switch = service.create_router(@attributes).body["Internet"]
           Fog::Logger.warning("Waiting available new router...")
           new_data = switch_available?(service, attached_switch["ID"])
-          puts ::JSON.pretty_generate new_data
           id = new_data['internet']['ID']
           merge_attributes(new_data['internet'])
           self.reload

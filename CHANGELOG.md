@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.7.2
+
+- Bug: remove debug code from create_router
+
 ## v1.7.1
 
 - Misc: Pass zone from Fog.credentials[:sakuracloud_api_zone].
