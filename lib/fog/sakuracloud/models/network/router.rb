@@ -7,13 +7,9 @@ module Fog
         identity :id, :aliases => 'ID'
         attribute :name, :aliases => 'Name'
         attribute :description, :aliases => 'Description'
-        attribute :server_count, :aliases => 'ServerCount'
-        attribute :appliance_count, :aliases => 'ApplianceCount'
-        attribute :subnets, :aliases => 'Subnets'
-        attribute :ipv6nets, :aliases => 'IPv6Nets'
-        attribute :internet, :aliases => 'Internet'
-        attribute :bridge, :aliases => 'Bridge'
-        attribute :networkmasklen
+        attribute :networkmasklen, :aliases => 'NetworkMaskLen'
+        attribute :bandwidthmbps, :aliases => 'BandWidthMbps'
+        attribute :switch, :aliases => 'Switch'
 
 
         def delete
@@ -25,10 +21,13 @@ module Fog
         def save
           requires :name, :networkmasklen
           Fog::Logger.warning("Create Router with public subnet")
-          data = service.create_router(@attributes).body["Internet"]
+          attached_switch = service.create_router(@attributes).body["Internet"]
           Fog::Logger.warning("Waiting available new router...")
-          new_data = router_available?(service, data["ID"])
-          merge_attributes(new_data)
+          new_data = switch_available?(service, attached_switch["ID"])
+          puts ::JSON.pretty_generate new_data
+          id = new_data['internet']['ID']
+          merge_attributes(new_data['internet'])
+          self.reload
           true
         end
 
@@ -40,7 +39,7 @@ module Fog
           service.change_router_bandwidth(identity, bandwidth).body["Success"]
         end
 
-        def router_available?(network, router_id)
+        def switch_available?(network, router_id)
           until network.switches.find {|r| r.internet != nil && r.internet["ID"] == router_id}
             print '.'
             sleep 2
