@@ -28,7 +28,7 @@ module Fog
           Fog.credentials[:sakuracloud_api_token_secret] = options[:sakuracloud_api_token_secret]
 
           @sakuracloud_api_url = options[:sakuracloud_api_url] || 'https://secure.sakura.ad.jp'
-          @api_zone            = options[:api_zone] || 'is1b'
+          @api_zone            = options[:api_zone] || Fog.credentials[:sakuracloud_api_zone] || 'is1b'
           Fog::SakuraCloud.validate_api_zone!(@api_zone)
 
           @connection = Fog::Core::Connection.new(@sakuracloud_api_url)

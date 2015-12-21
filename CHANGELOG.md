@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.7.1
+
+- Misc: Pass zone from Fog.credentials[:sakuracloud_api_zone].
+
 ## v1.7.0
 
 - Change: Rebuild router model from internet resource.
