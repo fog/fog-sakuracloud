@@ -5,14 +5,17 @@ Shindo.tests('Fog::Network[:sakuracloud] | list_routers request', ['sakuracloud'
     'Index'          => Integer,
     'ID'             => String,
     'Name'           => String,
-    'ServerCount'    => Integer,
-    'ApplianceCount' => Integer,
-    'Subnets'        => Array
+    'BandWidthMbps'  => Integer,
+    'NetworkMaskLen' => Integer,
+    'Switch'         => Hash
   }
 
   @routers_list_format = {
     'Index'          => Integer,
     'ID'             => String,
+    'Name'           => String,
+    'BandWidthMbps'  => Integer,
+    'NetworkMaskLen' => Integer,
     'Switch'         => Hash
   }
 
