@@ -35,7 +35,10 @@ module Fog
         end
 
         def change_bandwidth(bandwidth)
-          service.change_router_bandwidth(identity, bandwidth).body["Success"]
+          ## change_bandwidth returns router as new one.
+          new_router = service.change_router_bandwidth(identity, bandwidth).body["Internet"]
+          self.id = new_router['ID']
+          self.reload
         end
 
         def switch_available?(network, router_id)

@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.7.3
+
+- Coordinate: Router#change_bandwidth update current instance by new ID.
+
 ## v1.7.2
 
 - Bug: remove debug code from create_router
