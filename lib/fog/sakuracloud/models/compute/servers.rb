@@ -44,8 +44,9 @@ module Fog
             Fog::Logger.warning("Create Volume")
             sakuracloud_api_token        = options[:sakuracloud_api_token] || Fog.credentials[:sakuracloud_api_token]
             sakuracloud_api_token_secret = options[:sakuracloud_api_token_secret] || Fog.credentials[:sakuracloud_api_token_secret]
+            api_zone                     = service.instance_variable_get(:@api_zone)
             size_mb = options[:volume][:size_mb].to_i || 20480
-            volume = Fog::Volume::SakuraCloud.new(:sakuracloud_api_token => sakuracloud_api_token, :sakuracloud_api_token_secret => sakuracloud_api_token_secret)
+            volume = Fog::Volume::SakuraCloud.new(:sakuracloud_api_token => sakuracloud_api_token, :sakuracloud_api_token_secret => sakuracloud_api_token_secret, :api_zone => api_zone)
             disk = volume.disks.create :name => Fog::UUID.uuid,
                                 :plan  => options[:volume][:diskplan].to_i,
                                 :source_archive => options[:volume][:sourcearchive].to_s,

@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.7.5
+
+- Bug: Server#create_and_attach_volume ignores api_zone. => TODO: Cleanup
+
 ## v1.7.4
 
 - Bug: forgot zone is1a...
