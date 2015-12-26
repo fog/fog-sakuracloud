@@ -36,7 +36,7 @@ module Fog
 
 
     def self.api_zones
-      @api_zones ||= ['tk1a','is1b', 'is1b', 'tk1v']
+      @api_zones ||= ['tk1a','is1a', 'is1b', 'tk1v']
     end
 
     def self.validate_api_zone!(api_zone, host=nil)

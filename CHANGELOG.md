@@ -1,5 +1,9 @@
 # Changelog of fog-sakuracloud
 
+## v1.7.4
+
+- Bug: forgot zone is1a...
+
 ## v1.7.3
 
 - Coordinate: Router#change_bandwidth update current instance by new ID.
