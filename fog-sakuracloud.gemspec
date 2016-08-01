@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sawanoboriyu@higanworks.com"]
   spec.summary       = %q{Module for the 'fog' gem to support Sakura no Cloud}
   spec.description   = %q{Module for the 'fog' gem to support Sakura no Cloud}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/fog/fog-sakuracloud"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
