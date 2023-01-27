@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   ## those that are only needed during development
   spec.add_development_dependency('minitest')
   spec.add_development_dependency('rake')
-  spec.add_development_dependency('rbvmomi')
+  spec.add_development_dependency('rbvmomi2', '~> 3.0')
   spec.add_development_dependency('yard')
   spec.add_development_dependency('thor')
   spec.add_development_dependency('rbovirt', '0.0.24')
